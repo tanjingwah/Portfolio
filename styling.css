@@ -190,7 +190,7 @@ footer p {
     align-items: center; /* Center align the social links vertically */
     padding-left: 0px;
     padding-bottom: 40px;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .social-links a {
@@ -336,7 +336,9 @@ div, h3 {
 }
 .experiences-entry {
     display: flex;
-    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
     
 .left-section {
@@ -353,9 +355,11 @@ div, h3 {
 }
     
 .right-section {
-    flex: 1; /* Let the right section take up remaining space */
+    flex: 1 1 auto; /* Let the right section take up remaining space */
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    word-break: break-all;
 }
     
 .experience-details span {
@@ -401,4 +405,24 @@ div, h3 {
     border-radius: 20px;
     color: #EEF0E5;
 }
+
+.contact-entry {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space out the two sections */
+    margin-bottom: 10px; /* Add space between entries */
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.contact-details {
+    display: inline-block; /* Flexbox for alignment */
+    max-width: 100%; /* Prevent overflow */
+    width: 100%;
+    word-wrap: break-word; /* Allow words to break */
+    overflow-wrap: break-word;
+    font-family: 'livvic', sans-serif;
+    padding: 5px;
+}
+
+
 
