@@ -74,6 +74,7 @@
 }
 
 @media (max-width: 480px) { /* For mobile devices */
+
     body {
         overflow-x: hidden; /* Prevent horizontal scrolling */
         box-sizing: border-box; /* Include padding and borders in total width */
@@ -81,7 +82,7 @@
 
     .fixed-side {
         border-bottom: 1px solid #EEF0E5;
-        max-height: 50%;
+        max-height: 45%;
     }
     #hero h1 {
         font-size: 1.3rem; /* Further reduce h1 size */
@@ -100,17 +101,17 @@
     }
 
     .profile-pic img {
-        max-width: 80px; /* Further reduce profile picture size */
-        height: 80px;
+        display: none;
     }
 
     nav ul li a {
-        font-size: 0.7rem; /* Even smaller font size for mobile */
+        font-size: 0.78rem; /* Even smaller font size for mobile */
         margin-bottom: -20px;
     }
 
     footer p {
         font-size: 0.5rem; /* Reduce footer font size */
+        display: none;
     }
 
     .portfolio-card h3 {
@@ -122,12 +123,13 @@
     }
     .social-links i {
         padding-top: none;
-        font-size: 1rem;
+        font-size: 1.5rem;
         margin-top: 0px;
         margin-right: 0px;
     }
     .social-links a {
         margin-right: 25px;
+        font-size: 0.5rem;
     }
     .scrolling-side {
         padding-right: 20px; /* Adjust right padding */
@@ -144,4 +146,5 @@
         max-width: 100%; /* Prevent overflow of the container */
         font-size: 1rem; /* Set font size to 1rem */
     }
+
 }
