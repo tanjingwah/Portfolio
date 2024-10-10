@@ -373,6 +373,25 @@ div, h3 {
     font-size: 1rem;
     font-family: 'livvic-i', sans-serif;
 }
+
+.experience-details a {
+    display: inline-block;
+    color: #EEF0E5; 
+    font-weight: bold; 
+    padding-left: 0; 
+    text-decoration: none; 
+    transition: color 0.3s, transform 0.3s;
+}
+
+.experience-details a:hover {
+    color: #EEF0E5; 
+    transform: 
+        translate3d(10px, 2px, 25px) 
+        scale(1.5) 
+        rotate(50deg); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
     
 .experience-pic {
     display: flex;
