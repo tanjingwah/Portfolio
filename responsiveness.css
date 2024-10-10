@@ -1,0 +1,106 @@
+/* Base styles remain the same... */
+
+/* Responsive Styles */
+@media (max-width: 768px) { /* For tablets and mobile devices */
+    .container {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .fixed-side {
+        padding: 10px; /* Reduce padding for smaller screens */
+        padding-left: 10px; /* Adjust left padding */
+        position: relative; /* Change position to prevent overlap */
+        height: auto; /* Allow height to adjust */
+        
+    }
+
+    .scrolling-side {
+        padding-right: 20px; /* Adjust right padding */
+        overflow-y: auto; /* Enable scrolling on smaller screens */
+    }
+
+    .profile-pic {
+        padding-top: 10px;
+    }
+
+    .profile-pic img {
+        max-width: 80px; /* Reduce profile picture size */
+        height: 80px; /* Maintain aspect ratio */
+    }
+
+    #hero h1 {
+        font-size: 2rem; /* Adjust font size for h1 */
+    }
+
+    #hero h2 {
+        font-size: 1.2rem; /* Adjust font size for h2 */
+    }
+
+    #hero p {
+        font-size: 0.9rem; /* Adjust font size for p */
+    }
+
+    nav ul li a {
+        font-size: 0.8rem; /* Smaller font size for navigation links */
+    }
+
+    footer {
+        text-align: center; /* Center align footer text */
+    }
+
+    .portfolio-card {
+        margin-bottom: 15px; /* Reduce margin between cards */
+        padding: 15px; /* Reduce padding inside cards */
+    }
+
+    .education-entry, .experiences-entry {
+        margin-bottom: 15px; /* Reduce margin */
+    }
+
+    .soft-skills span, .computer-skills span {
+        padding: 5px 8px; /* Adjust padding for skill badges */
+        font-size: 0.8rem; /* Smaller font size */
+    }
+}
+
+@media (max-width: 480px) { /* For mobile devices */
+    .fixed-side {
+        border-bottom: 1px solid #EEF0E5;
+    }
+    #hero h1 {
+        font-size: 1.5rem; /* Further reduce h1 size */
+    }
+
+    #hero h2 {
+        font-size: 1rem; /* Further reduce h2 size */
+    }
+
+    #hero p {
+        font-size: 0.8rem; /* Further reduce paragraph size */
+    }
+
+    nav ul {
+        padding-left: 30px; /* Adjust padding for navigation */
+    }
+
+    .profile-pic img {
+        max-width: 80px; /* Further reduce profile picture size */
+        height: 80px;
+    }
+
+    nav ul li a {
+        font-size: 0.7rem; /* Even smaller font size for mobile */
+    }
+
+    footer p {
+        font-size: 0.5rem; /* Reduce footer font size */
+    }
+
+    .portfolio-card h3 {
+        font-size: 1rem; /* Adjust h3 size */
+    }
+
+    .portfolio-card h4 {
+        font-size: 0.8rem; /* Adjust h4 size */
+    }
+}

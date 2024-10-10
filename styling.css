@@ -1,0 +1,404 @@
+@font-face {
+    font-family: 'livvic'; /* Give your font a name */
+    src: url('Fonts/Livvic-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'livvic-bold'; /* Give your font a name */
+    src: url('Fonts/Livvic-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'livvic-i'; /* Give your font a name */
+    src: url('Fonts/Livvic-MediumItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box; /* This makes width and height include padding and borders */
+}
+
+html, body {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    height: 100%;
+    background-color: #163020;
+    font-family: 'livvic', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* Ensure the container takes up the full viewport height */
+    width: 100%;
+    overflow: hidden;
+    background-color: #163020;
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+    z-index: 2;
+}
+/* Dimming overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cursor-glow {
+    position: fixed;
+    pointer-events: none; /* Prevents the cursor from interfering with other elements */
+    width: 100px; /* Width of the glowing cursor */
+    height: 100px; /* Height of the glowing cursor */
+    border-radius: 50%; 
+    background: rgba(255, 255, 255, 0.0687); /* Color of the cursor */
+    box-shadow: 
+        0 0 4000px rgba(22, 48, 32, 0.6),   /* Outer glow: Same as background color */
+        0 0 2500px rgba(95, 206, 138, 0.4),  /* Lighter green glow */
+        0 0 1500px rgba(255, 255, 255, 0.3), /* Soft white glow */
+        0 0 1200px rgba(255, 255, 255, 0.2),  /* Additional soft white glow */
+        0 0 800px rgba(95, 206, 138, 0.3),    /* More light green */
+        0 0 400px rgba(255, 255, 255, 0.1);   /* Faint inner glow */ /* Inner glow: Very light */      
+    transition: background 0.2s ease; 
+    z-index: 9999; 
+    opacity: 0;
+}
+/* Show the glow when the cursor is near */
+.cursor-glow.active {
+    opacity: 1; /* Show glow */
+}
+
+button:hover .cursor-glow,
+a:hover .cursor-glow {
+    background: rgba(255, 255, 255, 0.5); /* Increase visibility on hover */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.7); /* More intense glow */
+}
+
+/* ----------------------------Fixed Side------------------------- */
+.fixed-side {
+    flex: 1;
+    padding: 88px 0 0 144px;
+    background-color: #163020;
+    color: #163020;
+    position: sticky;
+    top: 0;
+    height: 100vh; 
+    overflow: hidden; /* Prevent scrolling on this side */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.profile-pic {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+.profile-pic img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #EEF0E5;
+}
+
+#hero {
+    position: relative; /* Use relative positioning */
+    padding-left: 30px;
+    color: #EEF0E5;
+}
+
+#hero h1 {
+    font-family: 'livvic-bold', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #eef0e5;
+    margin-bottom: 2px;
+    margin-top: 0;
+}
+
+#hero h2 {
+    font-size: 1.5rem;
+    color: #eef0e5be;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+#hero p {
+    font-size: 1.0rem;
+    color: #eef0e56c;
+    margin-bottom: 10px;
+    margin-right: 79px;
+    margin-top: 0;
+}
+
+/* Navigation */
+nav {
+    margin-top: 0px;
+}
+
+nav ul {
+    padding-left: 30px;
+}
+
+nav ul li a {
+    color: #EEF0E5;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;  
+    height: 2rem; 
+    line-height: 2rem; 
+}
+
+nav ul li a:hover {
+    color: #eef0e56c;  
+    transform: scale(1.1) rotate(-5deg); 
+}
+
+
+/* Footer */
+footer {
+    text-align: left;
+    padding-top: 0px;
+    padding-left: 30px;
+    margin-top: auto;
+}
+footer p {
+    font-size: 0.58rem;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    color: #EEF0E5;
+    text-align: left;
+}
+
+.social-links {
+    display: flex;
+    align-items: center; /* Center align the social links vertically */
+    padding-left: 0px;
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+
+.social-links a {
+    margin-right: 10px;
+    color: #EEF0E5;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #B6C4B6;
+}
+
+.social-links i {
+    font-size: 2.5rem; /* Adjust the icon size */
+    margin-right: 15px; /* Space between the icons */
+    color: #EEF0E5;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links i:hover {
+    color: #B6C4B6;
+    transform: scale(1.1) rotate(-5deg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+/* V V V V V V V V V V V V V Scrolling Side V V V V V V V V V V V V */
+.scrolling-side {
+    flex: 1;
+    padding: 0px 144px 0 15px;
+    overflow-y: scroll; /* Allow this side to scroll */
+    background-color: #163020;
+}
+
+/* About Me Section */
+#aboutme {
+    margin-bottom: 30px;
+    padding-top: 70px;
+    padding-left: 40px;
+    padding-bottom: 10px;
+    color: #EEF0E5;
+}
+
+/* Portfolio Section */
+.portfolio-card {
+    background-color: #163020;
+    padding: 20px;
+    color: #EEF0E5;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    position: relative;
+    transition: background-color 0.5s ease; /* Fixed transition duration */
+}
+
+.portfolio-card:hover {
+    background-color: #304D30; 
+    transform: scale(1.005); 
+    box-shadow: 0 4px 12px rgba(182, 196, 182, 0.3); 
+    transition: transform 0.3s, background-color 0.3s; /* Smooth transition for effects */
+}
+
+.portfolio-card h3 {
+    font-family: 'livvic-bold', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.portfolio-card h4 {
+    display: inline-block;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    padding-left: 20px;
+}
+
+
+/* Skills and Proficiencies */
+.soft-skills, .computer-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.soft-skills span,  
+.computer-skills span {
+    background-color: #b6c4b688;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #163020;
+    font-weight: 300;
+}
+
+.soft-skills:hover span,
+.computer-skills:hover span {
+    color: #163020;
+}
+
+.skill-section {
+    display: flex;
+    flex-direction: column; /* Stack spans vertically within each section */
+    padding: 0;
+}
+
+.skill-section h5 {
+    margin-bottom: 10px; /* Space between heading and spans */
+    font-size: 0.75rem;
+}
+
+.skill-section span {
+    padding: 5px 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+/* Education section */
+.education-entry {
+    margin-bottom: 20px;
+}
+
+.education-entry p {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.education-entry span {
+    display: inline-block;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    background-color: #b6c4b688;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #163020;
+}
+
+
+/* Experience section */
+div, h3 {
+    font-family: 'livvic-bold', sans-serif;
+    padding-left: 20px;
+    color: #EEF0E5;
+}
+.experiences-entry {
+    display: flex;
+    width: 100%;
+}
+    
+.left-section {
+    flex: 0 0 23%; /* Keep the date section fixed in width */
+    display: flex;
+    align-items: flex-start;
+    padding-left: 0;
+}
+    
+.experience-date {
+    font-size: 0.9rem;
+    font-family: 'livvic', sans-serif;
+    color: #EEF0E5;
+}
+    
+.right-section {
+    flex: 1; /* Let the right section take up remaining space */
+    display: flex;
+    flex-direction: column;
+}
+    
+.experience-details span {
+    margin: 0;
+    font-size: 1.1rem;
+}
+       
+.experience-details p {
+    color: #EEF0E5;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'livvic-i', sans-serif;
+}
+    
+.experience-pic {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+.experience-pic img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid #EEF0E5;
+}
+.tags {
+    margin-top: 10px;
+    display: flex;
+    font-family: 'livvic', sans-serif;
+    gap: 10px; /* Space between tags */
+    flex-wrap: wrap;
+    padding-left: 0;
+    font-size: 0.9rem;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    background-color: #040c079d;
+    padding: 3px 9px;
+    border-radius: 20px;
+    color: #EEF0E5;
+}
+
