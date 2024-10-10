@@ -114,6 +114,47 @@ a:hover .cursor-glow {
     border: 2px solid #EEF0E5;
 }
 
+.name {
+    display: inline-block;
+    position: relative; /* Allows for relative positioning */
+    transition: color 0.5s ease;
+}
+
+.name:hover {
+    color: #EEF0E5;       
+}
+
+.name::after {
+    content: ''; /* Initially empty to occupy space */
+    display: block; /* Ensures it takes up space below the original text */
+    font-size: 1.5rem; /* Set your desired size */
+    color: transparent; /* Hide it initially */
+    transition: color 0.5s ease, opacity 0.5s ease; /* Transition for color and opacity */
+    opacity: 0; /* Start invisible */
+    transform:translateY(-10px); 
+}
+
+.name:hover::after {
+    content: 'People also call me Bobby'; /* New text */
+    text-align: center;
+    color: #163020; /* Change this to your desired text color */
+    background-color: #EEF0E5;
+    border-radius: 20px;
+    opacity: 1; /* Make it visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0; /* Start invisible */
+        transform: translateY(-10px); /* Optional: Start slightly above */
+    }
+    to {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Return to original position */
+    }
+}
+
 #hero {
     position: relative; /* Use relative positioning */
     padding-left: 30px;
