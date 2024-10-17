@@ -25,8 +25,8 @@
     }
 
     .profile-pic img {
-        max-width: 80px; /* Reduce profile picture size */
-        height: 80px; /* Maintain aspect ratio */
+        max-width: 88px; /* Reduce profile picture size */
+        height: 88px; /* Maintain aspect ratio */
     }
 
     #hero h1 {
@@ -71,6 +71,36 @@
     .social-links a {
         margin-right: 25px;
     }
+
+    .name {
+        display: inline-block;
+        position: relative; /* Allows for relative positioning */
+        transition: color 0.5s ease;
+    }
+    
+    .name:hover {
+        color: #EEF0E5;       
+    }
+    
+    .name::after {
+        content: ''; /* Initially empty to occupy space */
+        display: block; /* Ensures it takes up space below the original text */
+        font-size: 1rem; /* Set your desired size */
+        color: transparent; /* Hide it initially */
+        transition: color 0.5s ease, opacity 0.5s ease; /* Transition for color and opacity */
+        opacity: 0; /* Start invisible */
+        transform:translateY(-10px); 
+    }
+    
+    .name:hover::after {
+        content: 'People also call me Bobby'; /* New text */
+        text-align: center;
+        color: #163020; /* Change this to your desired text color */
+        background-color: #EEF0E5;
+        border-radius: 20px;
+        opacity: 1; /* Make it visible */
+        transform: translateY(0); /* Move to original position */
+    }
 }
 
 @media (max-width: 480px) { /* For mobile devices */
@@ -82,7 +112,7 @@
 
     .fixed-side {
         border-bottom: 1px solid #EEF0E5;
-        max-height: 45%;
+        max-height: 40%;
     }
     #hero h1 {
         font-size: 1.3rem; /* Further reduce h1 size */
@@ -145,6 +175,36 @@
         white-space: normal; /* Allow text to wrap normally */
         max-width: 100%; /* Prevent overflow of the container */
         font-size: 1rem; /* Set font size to 1rem */
+    }
+
+    .name {
+        display: inline-block;
+        position: relative; /* Allows for relative positioning */
+        transition: color 0.5s ease;
+    }
+    
+    .name:hover {
+        color: #EEF0E5;       
+    }
+    
+    .name::after {
+        content: ''; /* Initially empty to occupy space */
+        display: block; /* Ensures it takes up space below the original text */
+        font-size: 0.7rem; /* Set your desired size */
+        color: transparent; /* Hide it initially */
+        transition: color 0.5s ease, opacity 0.5s ease; /* Transition for color and opacity */
+        opacity: 0; /* Start invisible */
+        transform:translateY(-10px); 
+    }
+    
+    .name:hover::after {
+        content: 'People also call me Bobby'; /* New text */
+        text-align: center;
+        color: #163020; /* Change this to your desired text color */
+        background-color: #EEF0E5;
+        border-radius: 20px;
+        opacity: 1; /* Make it visible */
+        transform: translateY(0); /* Move to original position */
     }
 
 }
