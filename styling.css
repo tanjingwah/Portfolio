@@ -1,18 +1,18 @@
 @font-face {
-    font-family: 'livvic'; /* Give your font a name */
-    src: url('Fonts/Livvic-Medium.ttf') format('truetype');
+    font-family: 'livvic'; 
+    src: url('./components/Typography/Fonts/Livvic-Medium.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
-    font-family: 'livvic-bold'; /* Give your font a name */
-    src: url('Fonts/Livvic-Bold.ttf') format('truetype');
+    font-family: 'livvic-bold'; 
+    src: url('./components/Typography/Fonts/Livvic-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
-    font-family: 'livvic-i'; /* Give your font a name */
-    src: url('Fonts/Livvic-MediumItalic.ttf') format('truetype');
+    font-family: 'livvic-i'; 
+    src: url('./components/Typography/Fonts/Livvic-MediumItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -305,6 +305,9 @@ footer p {
     margin-bottom: 15px;
     text-decoration: underline;
     padding-left: 20px;
+}
+.portfolio-card p {
+    font-family: 'livviv', sans-serif;
 }
 
 
